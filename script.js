@@ -31,6 +31,7 @@ function applyColor() {
   }
 }
 
+// Click Events
 decreaseBtn.addEventListener("click", () => {
   decrease();
   applyColor();
@@ -47,4 +48,21 @@ resetBtn.addEventListener("click", () => {
   reset();
   applyColor();
   updateDisplay();
+});
+
+// Keyboard Events
+document.addEventListener("keydown", (event) => {
+  if (event.key === "-") {
+    decrease();
+    applyColor();
+    updateDisplay();
+  } else if (event.key === "+") {
+    increase();
+    applyColor();
+    updateDisplay();
+  } else if (event.key === "r" || event.key === "R") {
+    reset();
+    applyColor();
+    updateDisplay();
+  }
 });
